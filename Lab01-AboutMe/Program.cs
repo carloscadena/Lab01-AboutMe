@@ -10,15 +10,14 @@ namespace Lab01_AboutMe
             Console.ReadLine();
             
             QuestionOne();
-            //Console.WriteLine("True or False, I've jumped out of an airplane.");
-            //QuestionTwo();
-            //Console.WriteLine("What was the last country I was in, besides the US. It starts with an N.");
+            QuestionTwo();
             //QuestionThree();
             //Console.WriteLine("Do I have a pet?");
             //QuestionFour();
             //Console.WriteLine("True or False, I love ping pong.");
             //QuestionFive();
         }
+
         static int QuestionOne()
         {
             Console.WriteLine("On what day in November is my birthday?");
@@ -35,15 +34,31 @@ namespace Lab01_AboutMe
             if(input == 4)
             {
                 Console.WriteLine("An amazing guess! You got it.");
-                return 4;
+                return input;
             }
             else
             {
                 Console.WriteLine("Wrong! I guess you don't know me at all. Did you ever care? The correct answer was 4.");
-                return 4;
+                return input;
             }
-
         }
-        
+
+        static bool QuestionTwo()
+        {
+            Console.WriteLine("True or False, I've never jumped out of an airplane.");
+            Console.WriteLine("1. True");
+            Console.WriteLine("2. False");
+            int input = int.Parse(Console.ReadLine());
+            if (input == 1)
+            {
+                Console.WriteLine("You're correct. Jumping out of planes is insane.");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Wrong! Maybe someday.");
+                return false;
+            }
+        }
     }
 }

@@ -8,12 +8,8 @@ namespace Lab01_AboutMe
         {
             Console.WriteLine("Welcome to the quiz about Carlos. This quiz will consist of 5 questions. When you're ready hit enter.");
             Console.ReadLine();
-            
-            QuestionOne();
-            QuestionTwo();
-            QuestionThree();
-            QuestionFour();
-            QuestionFive();
+            int total = GetScore();
+            Console.WriteLine($"You got {total} out 5 correct. Thanks for playing.");
         }
 
         static int QuestionOne()
@@ -66,8 +62,8 @@ namespace Lab01_AboutMe
         static string QuestionThree()
         {
             Console.WriteLine("What was the last country I was in, besides the US. It starts with an N and you must spell it correctly.");
-            string input = Console.ReadLine();
-            if (input.ToLower() == "norway")
+            string input = Console.ReadLine().ToLower();
+            if (input == "norway")
             {
                 Console.WriteLine("You are a great guesser or you have an unhealthy obsession with me.");
                 Console.WriteLine("------------------------------");
@@ -119,6 +115,27 @@ namespace Lab01_AboutMe
                 Console.WriteLine("------------------------------");
                 return false;
             }
+        }
+
+        static int GetScore()
+        {
+            int uno = QuestionOne();
+            bool dos = QuestionTwo();
+            string tres = QuestionThree();
+            int cuatro = QuestionFour();
+            bool cinco = QuestionFive();
+
+            string[] userAnswers = { uno.ToString(), dos.ToString(), tres, cuatro.ToString(), cinco.ToString() };
+            string[] correctAnswers = { "4", "True", "norway", "2", "True" };
+            int score = 0;
+            for (int i = 0; i < userAnswers.Length; i++)
+            {
+                if (userAnswers[i] == correctAnswers[i])
+                {
+                    score++;
+                }
+            }
+            return score;
         }
     }
 }

@@ -13,8 +13,7 @@ namespace Lab01_AboutMe
             QuestionTwo();
             QuestionThree();
             QuestionFour();
-            //Console.WriteLine("True or False, I love ping pong.");
-            //QuestionFive();
+            QuestionFive();
         }
 
         static int QuestionOne()
@@ -33,11 +32,13 @@ namespace Lab01_AboutMe
             if(input == 4)
             {
                 Console.WriteLine("An amazing guess! You got it.");
+                Console.WriteLine("------------------------------");
                 return input;
             }
             else
             {
                 Console.WriteLine("Wrong! I guess you don't know me at all. Did you ever care? The correct answer was 4.");
+                Console.WriteLine("------------------------------");
                 return input;
             }
         }
@@ -51,11 +52,13 @@ namespace Lab01_AboutMe
             if (input == 1)
             {
                 Console.WriteLine("You're correct. Jumping out of planes is insane.");
+                Console.WriteLine("------------------------------");
                 return true;
             }
             else
             {
                 Console.WriteLine("Wrong! Maybe someday.");
+                Console.WriteLine("------------------------------");
                 return false;
             }
         }
@@ -67,11 +70,13 @@ namespace Lab01_AboutMe
             if (input.ToLower() == "norway")
             {
                 Console.WriteLine("You are a great guesser or you have an unhealthy obsession with me.");
+                Console.WriteLine("------------------------------");
                 return input;
             }
             else
             {
                 Console.WriteLine("Wrong! The correct answer was Norway.");
+                Console.WriteLine("------------------------------");
                 return input;
             }
         }
@@ -85,12 +90,34 @@ namespace Lab01_AboutMe
             if (input == 1)
             {
                 Console.WriteLine("Wrong! I'll definitely have a dog in the future though.");
+                Console.WriteLine("------------------------------");
                 return input;
             }
             else
             {
                 Console.WriteLine("You're right! Unfortunately. Animals are the best.");
+                Console.WriteLine("------------------------------");
                 return input;
+            }
+        }
+
+        static bool QuestionFive()
+        {
+            Console.WriteLine("True or False, I love ping pong.");
+            Console.WriteLine("1. True");
+            Console.WriteLine("2. False");
+            int input = int.Parse(Console.ReadLine());
+            if (input == 1)
+            {
+                Console.WriteLine("Yes! Who doesn't?");
+                Console.WriteLine("------------------------------");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("You're way off. Ping pong is the best.");
+                Console.WriteLine("------------------------------");
+                return false;
             }
         }
     }

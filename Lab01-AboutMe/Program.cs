@@ -11,34 +11,38 @@ namespace Lab01_AboutMe
             int total = GetScore();
             Console.WriteLine($"You got {total} out 5 correct. Thanks for playing.");
         }
-
+        // First question with an int return value
         static int QuestionOne()
         {
             Console.WriteLine("On what day in November is my birthday?");
             int input = 0;
             try
             {
+                // Make sure the user inputs a number
                 input = int.Parse(Console.ReadLine());
             }
             catch (Exception)
             {
+                // User did not input number
                 Console.WriteLine("That doesn't work. You need to take this more seriously.");
             }
 
             if(input == 4)
             {
+                // Correct answer
                 Console.WriteLine("An amazing guess! You got it.");
                 Console.WriteLine("------------------------------");
                 return input;
             }
             else
             {
+                //wrong answer
                 Console.WriteLine("Wrong! I guess you don't know me at all. Did you ever care? The correct answer was 4.");
                 Console.WriteLine("------------------------------");
                 return input;
             }
         }
-
+        // Second question with a bool return value
         static bool QuestionTwo()
         {
             Console.WriteLine("True or False, I've never jumped out of an airplane.");
@@ -58,7 +62,7 @@ namespace Lab01_AboutMe
                 return false;
             }
         }
-
+        // Third question with a string return value
         static string QuestionThree()
         {
             Console.WriteLine("What was the last country I was in, besides the US. It starts with an N and you must spell it correctly.");
@@ -76,7 +80,7 @@ namespace Lab01_AboutMe
                 return input;
             }
         }
-
+        // fourth question with an int return value
         static int QuestionFour()
         {
             Console.WriteLine("Do I have a pet?");
@@ -96,7 +100,7 @@ namespace Lab01_AboutMe
                 return input;
             }
         }
-
+        // Fifth question with a bool return value
         static bool QuestionFive()
         {
             Console.WriteLine("True or False, I love ping pong.");
@@ -116,7 +120,7 @@ namespace Lab01_AboutMe
                 return false;
             }
         }
-
+        // Call previous 5 methods and compare against correct answers
         static int GetScore()
         {
             int uno = QuestionOne();
@@ -127,6 +131,7 @@ namespace Lab01_AboutMe
 
             string[] userAnswers = { uno.ToString(), dos.ToString(), tres, cuatro.ToString(), cinco.ToString() };
             string[] correctAnswers = { "4", "True", "norway", "2", "True" };
+            // Loop through to do comparison
             int score = 0;
             for (int i = 0; i < userAnswers.Length; i++)
             {

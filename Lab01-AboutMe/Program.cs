@@ -11,9 +11,8 @@ namespace Lab01_AboutMe
             
             QuestionOne();
             QuestionTwo();
-            //QuestionThree();
-            //Console.WriteLine("Do I have a pet?");
-            //QuestionFour();
+            QuestionThree();
+            QuestionFour();
             //Console.WriteLine("True or False, I love ping pong.");
             //QuestionFive();
         }
@@ -60,6 +59,7 @@ namespace Lab01_AboutMe
                 return false;
             }
         }
+
         static string QuestionThree()
         {
             Console.WriteLine("What was the last country I was in, besides the US. It starts with an N and you must spell it correctly.");
@@ -72,6 +72,24 @@ namespace Lab01_AboutMe
             else
             {
                 Console.WriteLine("Wrong! The correct answer was Norway.");
+                return input;
+            }
+        }
+
+        static int QuestionFour()
+        {
+            Console.WriteLine("Do I have a pet?");
+            Console.WriteLine("1. Yes");
+            Console.WriteLine("2. No");
+            int input = int.Parse(Console.ReadLine());
+            if (input == 1)
+            {
+                Console.WriteLine("Wrong! I'll definitely have a dog in the future though.");
+                return input;
+            }
+            else
+            {
+                Console.WriteLine("You're right! Unfortunately. Animals are the best.");
                 return input;
             }
         }

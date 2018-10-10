@@ -60,5 +60,20 @@ namespace Lab01_AboutMe
                 return false;
             }
         }
+        static string QuestionThree()
+        {
+            Console.WriteLine("What was the last country I was in, besides the US. It starts with an N and you must spell it correctly.");
+            string input = Console.ReadLine();
+            if (input.ToLower() == "norway")
+            {
+                Console.WriteLine("You are a great guesser or you have an unhealthy obsession with me.");
+                return input;
+            }
+            else
+            {
+                Console.WriteLine("Wrong! The correct answer was Norway.");
+                return input;
+            }
+        }
     }
 }
